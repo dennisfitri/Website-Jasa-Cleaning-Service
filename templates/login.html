@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login Admin</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styleform.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" type="text/css">
+        <script src="{{ url_for('static', filename='bootstrap-4.3.1-dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    </head>
+    <body>
+      <div class="square600">
+        <h2>Login</h2>
+        <br>
+        <br>
+        {% if msg %}
+            <p style="color: red;">{{ msg }}</p>
+        {% endif %}
+        <form action="/login" method="post">
+            <div class="form-group">
+              <label for="inputNama">Username</label>
+              <input type="text" class="form-control" id="inputUsername"  placeholder="Masukkan username" name="username" >
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" class="form-control" id="inputPassword"  name="password" placeholder="Masukkan password">
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <input name="save" type="submit" class="btn btn-primary" value="Login">
+        </form>
+        <p style="color:red; font-style: italic;">*hanya bisa diakses oleh admin saja</p>
+    </div>
+    </body>
+</html>

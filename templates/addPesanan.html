@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tambah Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styleform.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" type="text/css">
+        <script src="{{ url_for('static', filename='bootstrap-4.3.1-dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    </head>
+    <body>
+      <div class="square600">
+        <h2>Tambah Pemesanan</h2>
+        <br>
+        <br>
+        <form action="/addPesanan" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputTanggal">Tanggal Pemesanan</label>
+                <input type="date" class="form-control" id="inputTanggal" name="tanggal" placeholder="Masukkan Tanggal">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputWaktu">Waktu Pemesanan</label>
+                <input type="time" class="form-control" id="inputWaktu" name="waktu" placeholder="Pilih Jam">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputNama">Nama</label>
+              <input type="text" class="form-control" id="inputNama"  placeholder="Masukkan nama anda" name="nama" >
+            </div>
+            <div class="form-group">
+              <label for="inputNomor">Nomor Telpon</label>
+              <input type="text" class="form-control" id="inputNomor"  name="nomor_telpon" placeholder="Masukkan nomor telpon yang bisa dihubungi">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputAlamat">Alamat</label>
+                <input type="text" class="form-control" id="inputAlamat"  name="alamat" placeholder="Masukkan alamat Anda">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Jenis Paket</label>
+                <select id="inputState" class="form-control" name="jenis_paket">
+                  <option value="" selected>--Pilih jenis paket--</option>
+                  <option >Hemat</option>
+                  <option >Standar</option>
+                  <option >Premium</option>
+                  <option >Ultimate</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Durasi</label>
+                <input type="number" class="form-control" id="inputDurasi" name="durasi">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            
+            <input name="save" type="submit" class="btn btn-primary" value="Save">
+        </form>
+    </div>
+    </body>
+</html>
